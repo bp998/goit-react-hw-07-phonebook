@@ -1,9 +1,9 @@
-import ContactListElement from './ContactListElement';
+import { selectContacts } from 'redux/selectors';
 import { useSelector } from 'react-redux';
-import { getContacts } from 'redux/selectors';
+import ContactListElement from './ContactListElement';
 
 const ContactList = () => {
-  const contacts = useSelector(getContacts);
+  const contacts = useSelector(selectContacts);
   return (
     <div>
       {contacts.length > 0 ? (

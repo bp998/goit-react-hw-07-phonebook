@@ -1,7 +1,7 @@
 import React from 'react';
 import css from './ContactForm.module.css';
 import { useDispatch } from 'react-redux';
-import { addContact } from 'redux/contactsSlice';
+import { addContact } from 'redux/operations';
 
 const ContactForm = () => {
   const dispatch = useDispatch();
@@ -10,7 +10,7 @@ const ContactForm = () => {
     const form = e.target;
     const name = form.elements.name.value;
     const number = form.elements.number.value;
-    dispatch(addContact(name, number));
+    dispatch(addContact({ name, number }));
     form.reset();
   };
 
